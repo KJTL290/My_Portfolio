@@ -194,3 +194,20 @@ footer {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+.about-container {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    gap: 20px; /* Space between image and text */
+}
+
+.about-image {
+    max-width: 180px; /* Adjust the size of the image as needed */
+    height: auto;
+    flex-shrink: 0; /* Prevent the image from shrinking */
+}
+
+.about-container p {
+    text-align: justify; /* Justify the text */
+    flex-grow: 1; /* Allow the text to take up remaining space */
+}
