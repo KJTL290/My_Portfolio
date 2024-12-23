@@ -1,16 +1,25 @@
-function scrollToSection(section) {
-    document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
-}
+document.addEventListener('DOMContentLoaded', () => {
+    const backToTopBtn = document.getElementById('backToTopBtn') as HTMLElement;
 
-window.onscroll = function() {
-    var topButton = document.getElementById("backToTopBtn");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        topButton.style.display = "block";
-    } else {
-        topButton.style.display = "none";
-    }
-};
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.style.display = 'block';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    });
 
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
+
+const menuToggle = document.querySelector('.menu-toggle') as HTMLElement;
+const navbar = document.querySelector('.navbar') as HTMLElement;
+
+menuToggle.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+});
